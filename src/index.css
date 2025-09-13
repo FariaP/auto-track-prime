@@ -2,39 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Sistema de Design para Oficina Mecânica
+Paleta: Azul escuro, cinza claro e laranja - tema automotivo profissional
+Todas as cores em HSL para consistência
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cores base */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
 
+    /* Cards e superfícies */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
+    /* Popovers e overlays */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Azul escuro automotivo - cor primária */
+    --primary: 217 91% 24%;
     --primary-foreground: 210 40% 98%;
+    --primary-hover: 217 91% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Cinza claro - cor secundária */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Tons neutros */
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Laranja automotivo - cor de destaque */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 24 95% 48%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Cores de estado */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 25% 27%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Bordas e inputs */
+    --border: 215 16% 87%;
+    --input: 215 16% 87%;
+    --ring: 217 91% 24%;
+
+    /* Gradientes automotivos */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 24%), hsl(217 91% 32%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 60%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+
+    /* Sombras */
+    --shadow-card: 0 2px 10px -2px hsl(217 91% 24% / 0.1);
+    --shadow-elevated: 0 8px 30px -8px hsl(217 91% 24% / 0.2);
+    --shadow-accent: 0 4px 20px -4px hsl(24 95% 53% / 0.3);
+
+    /* Animações */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
