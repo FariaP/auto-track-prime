@@ -3,8 +3,11 @@ import { VehicleCard } from "@/components/VehicleCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Wrench, CheckCircle, Plus, BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
+  const navigate = useNavigate();
+  
   // Mock data
   const statusData = [
     {
@@ -72,7 +75,11 @@ export default function AdminDashboard() {
                 <BarChart3 className="h-5 w-5" />
                 Relatórios
               </Button>
-              <Button variant="accent" size="lg">
+              <Button 
+                variant="accent" 
+                size="lg"
+                onClick={() => navigate("/vehicle-registration")}
+              >
                 <Plus className="h-5 w-5" />
                 Novo Veículo
               </Button>
@@ -127,28 +134,40 @@ export default function AdminDashboard() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mb-4">Ações Rápidas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer">
+            <Card 
+              className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer"
+              onClick={() => navigate("/vehicle-registration")}
+            >
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">Cadastrar Veículo</CardTitle>
                 <CardDescription>Adicionar novo veículo ao sistema</CardDescription>
               </CardHeader>
             </Card>
             
-            <Card className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer">
+            <Card 
+              className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer"
+              onClick={() => navigate("/budget-creation")}
+            >
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">Criar Orçamento</CardTitle>
                 <CardDescription>Gerar orçamento para cliente</CardDescription>
               </CardHeader>
             </Card>
             
-            <Card className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer">
+            <Card 
+              className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer"
+              onClick={() => navigate("/service-checklist")}
+            >
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">Checklist</CardTitle>
                 <CardDescription>Atualizar status dos serviços</CardDescription>
               </CardHeader>
             </Card>
             
-            <Card className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer">
+            <Card 
+              className="shadow-card hover:shadow-elevated transition-all duration-200 cursor-pointer"
+              onClick={() => navigate("/vehicle-history")}
+            >
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">Histórico</CardTitle>
                 <CardDescription>Consultar histórico de veículos</CardDescription>
